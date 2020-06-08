@@ -16,8 +16,6 @@ public class TripEntity {
 
     private UUID uuid = UUID.randomUUID();
 
-    private String userId;
-
     private String country;
 
     private String city;
@@ -40,14 +38,6 @@ public class TripEntity {
 
     public void setUuid(UUID uuid) {
         this.uuid = uuid;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public String getCountry() {
