@@ -80,4 +80,12 @@ public class TripEntity {
 
     @ManyToOne
     private UserEntity user;
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 }

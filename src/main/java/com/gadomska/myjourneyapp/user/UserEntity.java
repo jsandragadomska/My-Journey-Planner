@@ -28,12 +28,18 @@ public class UserEntity {
 
     private String email;
 
+    @Column(name="ocountry")
     private String originCountry;
 
+
+    @Column(name="ocity")
     private String originCity;
 
     @Enumerated(STRING)
     private UserType type;
+
+    public UserEntity() {
+    }
 
     public Long getId() {
         return id;
