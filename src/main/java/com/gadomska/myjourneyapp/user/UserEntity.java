@@ -1,5 +1,7 @@
 package com.gadomska.myjourneyapp.user;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -10,7 +12,12 @@ import static javax.persistence.EnumType.STRING;
 public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(
+            name = "user_seq_generator",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = @org.hibernate.annotations.Parameter(name = "sequence_name", value = "USER_SEQ")
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_generator")
     private Long id;
 
     private UUID uuid = UUID.randomUUID();
@@ -22,6 +29,8 @@ public class UserEntity {
     private String email;
 
     private String originCountry;
+
+    private String originCity;
 
     @Enumerated(STRING)
     private UserType type;
@@ -72,6 +81,14 @@ public class UserEntity {
 
     public void setOriginCountry(String originCountry) {
         this.originCountry = originCountry;
+    }
+
+    public String getOriginCity() {
+        return originCity;
+    }
+
+    public void setOriginCity(String originCity) {
+        this.originCity = originCity;
     }
 
     public UserType getType() {

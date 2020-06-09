@@ -1,9 +1,10 @@
 package com.gadomska.myjourneyapp.trip;
 
 import com.gadomska.myjourneyapp.user.UserEntity;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -11,7 +12,12 @@ import java.util.UUID;
 public class TripEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(
+            name = "trip_seq_generator",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = @org.hibernate.annotations.Parameter(name = "sequence_name", value = "TRIP_SEQ")
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trip_seq_generator")
     private Long id;
 
     private UUID uuid = UUID.randomUUID();
@@ -20,9 +26,9 @@ public class TripEntity {
 
     private String city;
 
-    private Date firstDay;
+    private LocalDateTime firstDay;
 
-    private Date lastDay;
+    private LocalDateTime lastDay;
 
     public Long getId() {
         return id;
@@ -56,19 +62,19 @@ public class TripEntity {
         this.city = city;
     }
 
-    public Date getFirstDay() {
+    public LocalDateTime getFirstDay() {
         return firstDay;
     }
 
-    public void setFirstDay(Date firstDay) {
+    public void setFirstDay(LocalDateTime firstDay) {
         this.firstDay = firstDay;
     }
 
-    public Date getLastDay() {
+    public LocalDateTime getLastDay() {
         return lastDay;
     }
 
-    public void setLastDay(Date lastDay) {
+    public void setLastDay(LocalDateTime lastDay) {
         this.lastDay = lastDay;
     }
 
