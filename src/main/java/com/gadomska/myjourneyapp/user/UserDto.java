@@ -7,6 +7,7 @@ public class UserDto {
     private String password;
     private String email;
     private String originCountry;
+    private String originCity;
     private String type;
 
     public Long getId() {
@@ -47,6 +48,14 @@ public class UserDto {
 
     public void setOriginCountry(String originCountry) {
         this.originCountry = originCountry;
+    }
+
+    public String getOriginCity() {
+        return originCity;
+    }
+
+    public void setOriginCity(String originCity) {
+        this.originCity = originCity;
     }
 
     public String getType() {
