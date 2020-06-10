@@ -8,8 +8,8 @@ CREATE TABLE USER (
     LOGIN           varchar(30)         not null,
     PASSWORD        varchar(30)         not null,
     EMAIL           varchar(50)         not null,
-    OCOUNTRY        varchar(30)         not null,
-    OCITY           varchar(30)         not null
+    ORIGINCOUNTRY        varchar(30)         not null,
+    ORIGINCITY           varchar(30)         not null
 );
 
 CREATE SEQUENCE TRIP_SEQ

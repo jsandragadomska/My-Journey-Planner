@@ -1,0 +1,37 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "login": "login2",
+  "password": "password2",
+  "email": "email2@email.com",
+  "originCountry": "Poland",
+  "originCity": "Warsaw"
+}
+
+###
+
+POST http://localhost:8080/users/1/trips
+Content-Type: application/json
+
+{
+  "country": "Canada",
+  "city": "Ottawa",
+  "firstDay":
+  {
+    "year" : 2020,
+    "month" : "DECEMBER",
+    "dayOfMonth" : 1,
+    "dayOfWeek" : "TUESDAY",
+    "monthValue" : 12
+  },
+  "lastDay":
+  {
+    "year" : 2020,
+    "month" : "JANUARY",
+    "dayOfMonth" : 4,
+    "dayOfWeek" : "FRIDAY",
+    "monthValue" : 12
+  }
+}
+###

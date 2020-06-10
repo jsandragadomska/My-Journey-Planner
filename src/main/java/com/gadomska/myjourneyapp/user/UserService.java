@@ -14,10 +14,11 @@ import static java.util.stream.Collectors.toSet;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final TripService tripService;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, TripService tripService) {
         this.userRepository = userRepository;
-
+        this.tripService = tripService;
     }
 
     public Set<UserDto> getUsers() {
@@ -49,6 +50,11 @@ public class UserService {
         userDto.setOriginCity(userEntity.getOriginCity());
 
         return userDto;
+    }
+
+    public TripDto createTrip(Long userId, TripDto tripDto) {
+        UserEntity userEntity = userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
+        return tripService.createTrip(userEntity, tripDto);
     }
 
 }
