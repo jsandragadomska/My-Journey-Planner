@@ -1,9 +1,6 @@
 package com.gadomska.myjourneyapp.trip;
 
-import org.apache.tomcat.jni.Local;
-
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class TripDto {
 
@@ -11,8 +8,8 @@ public class TripDto {
     private Long userId;
     private String country;
     private String city;
-    private LocalDateTime firstDay;
-    private LocalDateTime lastDay;
+    private LocalDate firstDay;
+    private LocalDate lastDay;
 
     public Long getId() {
         return id;
@@ -46,19 +43,19 @@ public class TripDto {
         this.city = city;
     }
 
-    public LocalDateTime getFirstDay() {
+    public LocalDate getFirstDay() {
         return firstDay;
     }
 
-    public void setFirstDay(LocalDateTime firstDay) {
+    public void setFirstDay(LocalDate firstDay) {
         this.firstDay = firstDay;
     }
 
-    public LocalDateTime getLastDay() {
+    public LocalDate getLastDay() {
         return lastDay;
     }
 
-    public void setLastDay(LocalDateTime lastDay) {
+    public void setLastDay(LocalDate lastDay) {
         this.lastDay = lastDay;
     }
 }

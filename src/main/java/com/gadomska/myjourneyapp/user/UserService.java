@@ -36,6 +36,10 @@ public class UserService {
         return mapUser(userRepository.save(newUser));
     }
 
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
+    }
+
     private Set<UserDto> mapUsers(List<UserEntity> userEntities) {
         return userEntities.stream().map(this::mapUser).collect(toSet());
     }

@@ -44,4 +44,8 @@ public class TripService{
 
         return mapTrip(tripRepository.save(tripEntity));
     }
+
+    public void deleteById (Long id) {
+        tripRepository.deleteById(id);
+    }
 }

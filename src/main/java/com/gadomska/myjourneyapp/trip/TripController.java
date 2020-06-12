@@ -1,14 +1,12 @@
 package com.gadomska.myjourneyapp.trip;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
+
 
 @RestController
-@RequestMapping("/trips/{tripId}")
+@RequestMapping("/trips")
 public class TripController {
 
     private final TripService tripService;
@@ -20,6 +18,11 @@ public class TripController {
     @GetMapping
     public List<TripDto> getTrips(){
         return tripService.getTrips();
+    }
+
+    @DeleteMapping
+    public void deleteTrip(@RequestParam Long id) {
+        tripService.deleteById(id);
     }
 
 }

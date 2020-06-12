@@ -30,4 +30,9 @@ public class UserController {
         return userService.createTrip(userId, tripDto);
     }
 
+    @DeleteMapping
+    public void deleteUser(@RequestParam Long id) {
+        userService.deleteById(id);
+    }
+
 }

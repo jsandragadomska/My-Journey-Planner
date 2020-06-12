@@ -11,27 +11,14 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/users/1/trips
+POST http://localhost:8080/users/5/trips
 Content-Type: application/json
 
 {
+  "userId": 1,
   "country": "Canada",
-  "city": "Ottawa",
-  "firstDay":
-  {
-    "year" : 2020,
-    "month" : "DECEMBER",
-    "dayOfMonth" : 1,
-    "dayOfWeek" : "TUESDAY",
-    "monthValue" : 12
-  },
-  "lastDay":
-  {
-    "year" : 2020,
-    "month" : "JANUARY",
-    "dayOfMonth" : 4,
-    "dayOfWeek" : "FRIDAY",
-    "monthValue" : 12
-  }
+  "city": "Toronto",
+  "firstDay": "2020-11-13",
+  "lastDay": "2020-11-19"
 }
 ###

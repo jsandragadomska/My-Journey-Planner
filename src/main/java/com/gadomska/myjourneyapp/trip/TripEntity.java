@@ -4,6 +4,7 @@ import com.gadomska.myjourneyapp.user.UserEntity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -26,9 +27,9 @@ public class TripEntity {
 
     private String city;
 
-    private LocalDateTime firstDay;
+    private LocalDate firstDay;
 
-    private LocalDateTime lastDay;
+    private LocalDate lastDay;
 
     public Long getId() {
         return id;
@@ -62,19 +63,19 @@ public class TripEntity {
         this.city = city;
     }
 
-    public LocalDateTime getFirstDay() {
+    public LocalDate getFirstDay() {
         return firstDay;
     }
 
-    public void setFirstDay(LocalDateTime firstDay) {
+    public void setFirstDay(LocalDate firstDay) {
         this.firstDay = firstDay;
     }
 
-    public LocalDateTime getLastDay() {
+    public LocalDate getLastDay() {
         return lastDay;
     }
 
-    public void setLastDay(LocalDateTime lastDay) {
+    public void setLastDay(LocalDate lastDay) {
         this.lastDay = lastDay;
     }
 
