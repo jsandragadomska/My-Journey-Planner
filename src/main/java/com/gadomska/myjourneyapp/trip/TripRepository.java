@@ -8,6 +8,6 @@ import java.util.List;
 @Repository
 public interface TripRepository extends JpaRepository <TripEntity, Long> {
 
-    List<TripEntity> findAllByUserId (Long userId);
+    List<TripEntity> findAllByUserEntity(Long UserId);
 
 }

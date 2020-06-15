@@ -1,8 +1,10 @@
 package com.gadomska.myjourneyapp.user;
 
+import com.gadomska.myjourneyapp.trip.TripEntity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 import static javax.persistence.EnumType.STRING;
@@ -37,6 +39,9 @@ public class UserEntity {
 
     @Enumerated(STRING)
     private UserType type;
+
+    @OneToMany
+    private List<TripEntity> trips;
 
     public UserEntity() {
     }
@@ -103,5 +108,13 @@ public class UserEntity {
 
     public void setType(UserType type) {
         this.type = type;
+    }
+
+    public List<TripEntity> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(List<TripEntity> trips) {
+        this.trips = trips;
     }
 }

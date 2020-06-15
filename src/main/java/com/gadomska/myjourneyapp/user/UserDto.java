@@ -1,5 +1,9 @@
 package com.gadomska.myjourneyapp.user;
 
+import com.gadomska.myjourneyapp.trip.TripEntity;
+
+import java.util.List;
+
 public class UserDto {
 
     private Long id;
@@ -65,4 +69,5 @@ public class UserDto {
     public void setType(String type) {
         this.type = type;
     }
+
 }

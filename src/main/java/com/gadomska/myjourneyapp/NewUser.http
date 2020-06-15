@@ -2,11 +2,12 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-  "login": "login2",
-  "password": "password2",
-  "email": "email2@email.com",
+  "login": "login7",
+  "password": "password7",
+  "email": "email7@email.com",
   "originCountry": "Poland",
-  "originCity": "Warsaw"
+  "originCity": "Opoczno",
+  "type": "USER"
 }
 
 ###

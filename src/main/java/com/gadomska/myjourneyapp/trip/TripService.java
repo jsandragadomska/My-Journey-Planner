@@ -40,7 +40,7 @@ public class TripService{
         tripEntity.setCity(tripDto.getCity());
         tripEntity.setFirstDay(tripDto.getFirstDay());
         tripEntity.setLastDay(tripDto.getLastDay());
-        tripEntity.setUser(userEntity);
+ //       tripEntity.setUserEntity(userEntity);
 
         return mapTrip(tripRepository.save(tripEntity));
     }

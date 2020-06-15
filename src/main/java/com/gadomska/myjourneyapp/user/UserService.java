@@ -32,6 +32,8 @@ public class UserService {
         newUser.setEmail(userDto.getEmail());
         newUser.setOriginCountry(userDto.getOriginCountry());
         newUser.setOriginCity(userDto.getOriginCity());
+        newUser.setType(UserType.getValue(userDto.getType()));
+
 
         return mapUser(userRepository.save(newUser));
     }
@@ -52,6 +54,7 @@ public class UserService {
         userDto.setEmail(userEntity.getEmail());
         userDto.setOriginCountry(userEntity.getOriginCountry());
         userDto.setOriginCity(userEntity.getOriginCity());
+        userDto.setType(userEntity.getType().name());
 
         return userDto;
     }

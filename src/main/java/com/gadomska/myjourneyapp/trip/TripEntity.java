@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -30,6 +30,9 @@ public class TripEntity {
     private LocalDate firstDay;
 
     private LocalDate lastDay;
+
+    public TripEntity() {
+    }
 
     public Long getId() {
         return id;
@@ -79,14 +82,14 @@ public class TripEntity {
         this.lastDay = lastDay;
     }
 
-    @ManyToOne
-    private UserEntity user;
+    @OneToMany
+    private List<UserEntity> userEntity;
 
-    public UserEntity getUser() {
-        return user;
+    public List<UserEntity> getUserEntity() {
+        return userEntity;
     }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
+    public void setUserEntity(List<UserEntity> userEntity) {
+        this.userEntity = userEntity;
     }
 }
