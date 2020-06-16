@@ -6,6 +6,7 @@ public class TripDto {
 
     private Long id;
     private Long userId;
+
     private String country;
     private String city;
     private LocalDate firstDay;

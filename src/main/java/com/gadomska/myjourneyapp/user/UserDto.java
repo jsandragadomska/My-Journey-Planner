@@ -1,8 +1,5 @@
 package com.gadomska.myjourneyapp.user;
 
-import com.gadomska.myjourneyapp.trip.TripEntity;
-
-import java.util.List;
 
 public class UserDto {
 

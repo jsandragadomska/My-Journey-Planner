@@ -54,7 +54,7 @@ public class UserService {
         userDto.setEmail(userEntity.getEmail());
         userDto.setOriginCountry(userEntity.getOriginCountry());
         userDto.setOriginCity(userEntity.getOriginCity());
-        userDto.setType(userEntity.getType().name());
+//        userDto.setType(userEntity.getType().name());
 
         return userDto;
     }
