@@ -1,11 +1,10 @@
 package com.gadomska.myjourneyapp.trip;
 
-import com.gadomska.myjourneyapp.user.UserEntity;
+import com.gadomska.myjourneyapp.journey.JourneyEntity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -82,14 +81,7 @@ public class TripEntity {
         this.lastDay = lastDay;
     }
 
-    @OneToMany
-    private List<UserEntity> userEntity;
-
-    public List<UserEntity> getUserEntity() {
-        return userEntity;
-    }
-
-    public void setUserEntity(List<UserEntity> userEntity) {
-        this.userEntity = userEntity;
-    }
+    @ManyToOne
+    @JoinColumn(name = "journey_id", nullable = false)
+    private JourneyEntity journeyEntity;
 }

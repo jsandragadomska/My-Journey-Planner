@@ -1,5 +1,13 @@
 package com.gadomska.myjourneyapp.journey;
 
+import com.gadomska.myjourneyapp.trip.TripDto;
+import com.gadomska.myjourneyapp.trip.TripEntity;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+
 public class JourneyDto {
 
     //This class will contain steps of the journey - trips.
@@ -8,6 +16,14 @@ public class JourneyDto {
     private Long id;
     private String name;
     private Long userId;
+    private ArrayList<TripDto> trips;
+
+    public JourneyDto(Long id, String name, Long userId) {
+        this.id = id;
+        this.name = name;
+        this.userId = userId;
+        this.trips = new ArrayList<>();
+    }
 
     public Long getId() {
         return id;
